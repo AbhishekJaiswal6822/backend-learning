@@ -1,3 +1,9 @@
+# Ignore dependencies
+node_modules/
+package-lock.json
+
+# Ignore environment files
+.env
 # Logs
 logs
 *.log
