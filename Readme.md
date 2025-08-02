@@ -1,5 +1,19 @@
 # Backend with Javascript
 
+# Tech Stack
+
+Node.js (JavaScript runtime)
+Express.js (web framework)
+Multer (file upload middleware)
+Cloudinary (media storage/management)
+MongoDB (likely, for database)
+Mongoose (likely, for MongoDB object modeling)
+Postman (API testing tool, not part of code but commonly used for testing APIs)
+ES Modules (import/export syntax)
+dotenv (likely, for environment variable management)
+nodemon (likely, for development auto-reloading)
+Other utilities: custom error/response handlers
+
 -[Model Link](https://app.eraser.io/workspace/04i2SN7A8dDXe8VsXJkK?origin=share)
 
 ## utils 
