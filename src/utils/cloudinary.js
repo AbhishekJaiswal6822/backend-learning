@@ -33,21 +33,28 @@ Then return null to signal that the upload didn't succeed.
 
 This ensures that all uploaded files are cleaned up from the server, whether the upload to Cloudinary was successful or not.
 */
-const uploadOnCloudinary = async (LocalFilePath) =>{
+const uploadOnCloudinary = async (LocalFilePath) => {
     try {
-        if (!LocalFilePath) return null
-        // upload the file on cloudiinary 
-        const response = await cloudinary.uploader.upload(LocalFilePath,{
-            resource_type:"auto"
-        })
-        // file has been uploaded successfully 
-        console.log("File is uploaded on Cloudinary",response.url);
+        if (!LocalFilePath) return null;
+
+        // Upload the file to Cloudinary
+        const response = await cloudinary.uploader.upload(LocalFilePath, {
+            resource_type: "auto",
+        });
+
+        console.log("✅ File uploaded to Cloudinary:", response.url);
+
+        // ✅ Clean up local file
+        if (fs.existsSync(LocalFilePath)) fs.unlinkSync(LocalFilePath);
+
         return response;
     } catch (error) {
-        fs.unlinkSync(localStorage) // remove the locally saved temporary file as the uploadoperation got failed
+        console.error("❌ Cloudinary Upload Failed:", error);
+
+        // ✅ Delete file even if upload fails
+        if (fs.existsSync(LocalFilePath)) fs.unlinkSync(LocalFilePath);
+
         return null;
     }
-}
-
-
-export {uploadOnCloudinary}
+};
+export { uploadOnCloudinary };
