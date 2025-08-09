@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { registerUser , loginUser, logoutUser} from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
-import { verifyJWt } from "../middlewares/auth.middleware.js";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 
 /**
@@ -22,7 +22,7 @@ router.route("/register").post(
 
 router.route("/login").post(loginUser)
 
-router.route("/logout").post(verifyJWt ,logoutUser)
+router.route("/logout").post(verifyJWT ,logoutUser)
 
 // TODO: Uncomment when loginUser is defined
 // router.route("/login").post(loginUser);
