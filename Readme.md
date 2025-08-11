@@ -13,6 +13,7 @@ ES Modules (import/export syntax)
 dotenv (likely, for environment variable management)
 nodemon (likely, for development auto-reloading)
 Other utilities: custom error/response handlers
+jwt- jwtsign() , jwt verify()
 
 -[Model Link](https://app.eraser.io/workspace/04i2SN7A8dDXe8VsXJkK?origin=share)
 
