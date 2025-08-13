@@ -159,3 +159,19 @@ $match in MongoDB compares field values in documents against the conditions you 
 Interview one-liner:
 
 “The aggregation pipeline processes documents through multiple stages — typically filtering, joining/enriching, and transforming — but MongoDB actually supports over 30 different stage types.”
+
+It’s more like splitting a long list into smaller chunks (pages) so the user sees a few results at a time instead of everything at once.
+
+📌 Example:
+If you have 100 videos in MongoDB and you show 10 per page:
+
+Page 1 → videos 1–10
+
+Page 2 → videos 11–20
+
+Page 3 → videos 21–30
+…and so on.
+
+💡 Interview one-liner:
+
+“Pagination is the process of splitting large datasets into smaller, numbered pages to improve performance and user experience.”
